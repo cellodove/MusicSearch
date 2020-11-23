@@ -1,9 +1,11 @@
-package com.peter.musicsearch
+package com.peter.musicsearch.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import com.peter.musicsearch.R
 import com.peter.musicsearch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setListener()
         setObserver()
@@ -40,6 +42,14 @@ class MainActivity : AppCompatActivity() {
 
     //뷰모델에서 뷰로 오도록
     private fun setObserver() {
+        viewModel.apply {
+            artistDataLiveData.observe(
+                this@MainActivity,
+                Observer {
+
+                }
+            )
+        }
 
     }
 }
