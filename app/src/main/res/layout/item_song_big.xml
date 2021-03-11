@@ -5,15 +5,15 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/songItemContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/songImage"
+            android:id="@+id/thumbnail"
             android:layout_width="0dp"
             android:layout_height="0dp"
-
             android:layout_margin="16dp"
             app:layout_constraintDimensionRatio="h,1:1"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/songImage"
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
 
@@ -35,17 +35,15 @@
             android:textColor="#000000"/>
 
         <TextView
-            android:id="@+id/fullTile"
+            android:id="@+id/fullTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-
             tools:text="full title"
             android:textColor="#353535"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

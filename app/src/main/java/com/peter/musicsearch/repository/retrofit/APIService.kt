@@ -7,13 +7,20 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface APIService{
-    @Headers(
+/*    @Headers(
         "x-rapidapi-host : genius.p.rapidapi.com",
-        "x-rapidapi-key : b3ecde85b6msh09cfd41b0e828dep14ec1bjsnd3baafbc7a37"
+        "x-rapidapi-key : c0e7932c06mshd5ce79e2d2e82b6p174f53jsn5780820133a8"
     )
 
     //q뒤에 안드로이드에서 보낼 변수내용
     @GET("/search")
-    suspend fun searchArtist(@Query("q") artist : String): Response<ArtistData>
+    suspend fun searchArtist(@Query("q") artist : String): Response<ArtistData>*/
+
+    @Headers(
+        "x-rapidapi-host: genius.p.rapidapi.com",
+        "x-rapidapi-key: c0e7932c06mshd5ce79e2d2e82b6p174f53jsn5780820133a8"
+    )
+    @GET("/search")
+    suspend fun searchArtist(@Query("q") artist: String): Response<ArtistData>
 
 }

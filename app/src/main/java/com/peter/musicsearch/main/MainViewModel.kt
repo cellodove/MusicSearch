@@ -20,8 +20,10 @@ class MainViewModel : ViewModel() {
     fun searchArtist(artist : String){
         viewModelScope.launch {
             _artistResponseLiveData.value = appRepository.searchArtist(artist)
-
         }
+    }
 
+    fun toggleItemOpen(position: Int) {
+        artistDataLiveData.value?.response?.hitsList?.get(position)?.result?.toggle()
     }
 }
